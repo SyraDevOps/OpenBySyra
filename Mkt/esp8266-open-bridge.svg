@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Open-Bridge-Syra para ESP8266</title>
+  <desc id="desc">Peça para Instagram da SyraDevOps com ilustração vetorial de um ESP8266.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061d1c"/>
+      <stop offset="1" stop-color="#031010"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b4f4a"/>
+      <stop offset="1" stop-color="#0a2725"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#background)"/>
+  <circle cx="905" cy="134" r="280" fill="#0d7666" opacity=".16"/>
+  <path d="M0 884C274 759 510 996 1080 705" fill="none" stroke="#32d7b3" stroke-opacity=".16" stroke-width="2"/>
+  <path d="M0 930C364 821 626 1044 1080 804" fill="none" stroke="#32d7b3" stroke-opacity=".11" stroke-width="2"/>
+  <text x="84" y="110" fill="#7cf5d7" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" letter-spacing="5">OPENBYSYRA</text>
+  <text x="84" y="183" fill="#f4fffd" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="700">OPEN-BRIDGE-SYRA</text>
+  <text x="84" y="230" fill="#a9c7c1" font-family="Arial, Helvetica, sans-serif" font-size="27">Esp8266 • Nó local de comunicação</text>
+  <g transform="translate(145 356)">
+    <g fill="#b3fbe9" opacity=".85">
+      <rect x="-31" y="28" width="31" height="12" rx="4"/><rect x="-31" y="67" width="31" height="12" rx="4"/><rect x="-31" y="106" width="31" height="12" rx="4"/><rect x="-31" y="145" width="31" height="12" rx="4"/><rect x="-31" y="184" width="31" height="12" rx="4"/><rect x="-31" y="223" width="31" height="12" rx="4"/>
+      <rect x="615" y="28" width="31" height="12" rx="4"/><rect x="615" y="67" width="31" height="12" rx="4"/><rect x="615" y="106" width="31" height="12" rx="4"/><rect x="615" y="145" width="31" height="12" rx="4"/><rect x="615" y="184" width="31" height="12" rx="4"/><rect x="615" y="223" width="31" height="12" rx="4"/>
+    </g>
+    <rect width="615" height="263" rx="20" fill="url(#chip)" stroke="#75f4d6" stroke-width="3"/>
+    <rect x="53" y="47" width="262" height="169" rx="12" fill="#082321" stroke="#3fc9ac" stroke-width="2"/>
+    <rect x="350" y="41" width="164" height="83" rx="8" fill="#061614" stroke="#3fc9ac" stroke-width="2"/>
+    <rect x="350" y="144" width="164" height="72" rx="8" fill="#061614" stroke="#3fc9ac" stroke-width="2"/>
+    <circle cx="550" cy="71" r="11" fill="#7cf5d7" filter="url(#glow)"/>
+    <circle cx="550" cy="105" r="8" fill="#285d53"/>
+    <text x="86" y="118" fill="#9cf9e2" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">ESP8266</text>
+    <text x="86" y="157" fill="#6ae6c9" font-family="monospace" font-size="20">SYRA BRIDGE</text>
+    <path d="M315 132H350M514 82H578M514 180H578" stroke="#71f2d3" stroke-width="4" fill="none"/>
+    <path d="M54 236H559" stroke="#45bda4" stroke-opacity=".65" stroke-width="2"/>
+  </g>
+  <text x="84" y="757" fill="#f4fffd" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">Sua rede local,</text>
+  <text x="84" y="825" fill="#7cf5d7" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">mais inteligente.</text>
+  <rect x="84" y="893" width="912" height="1" fill="#51d6ba" opacity=".5"/>
+  <text x="84" y="953" fill="#c7e2dc" font-family="Arial, Helvetica, sans-serif" font-size="25">github.com/SyraDevOps</text>
+  <text x="996" y="953" fill="#7cf5d7" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" text-anchor="end">@SyraDevOps</text>
+</svg>

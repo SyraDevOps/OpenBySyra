@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SyraVisage — Demo</title>
+  <style>
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:#110a25;color:#f8f4ff;font-family:Arial,sans-serif;padding:30px}
+    main{max-width:1200px;margin:auto}.brand{color:#fdba74;font-size:13px;font-weight:800;letter-spacing:4px}.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;border-bottom:1px solid #5b2c91;padding:18px 0 25px}.heading h1{font-size:clamp(34px,5vw,64px);margin:5px 0 0}.heading p{color:#c4b5fd;margin:0;max-width:350px;line-height:1.5}.grid{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;margin-top:28px}.stage{position:relative;aspect-ratio:16/9;background:#210f3e;border:1px solid #7e22ce;border-radius:18px;overflow:hidden}.stage video,.stage canvas{position:absolute;width:100%;height:100%;object-fit:cover}.stage video{opacity:0}.pill{position:absolute;top:16px;left:16px;background:#2e1065cc;border:1px solid #a855f7;border-radius:999px;padding:8px 11px;font-size:12px}.panel{background:#1b1033;border:1px solid #5b2c91;border-radius:18px;padding:22px}.stat{font-size:42px;font-weight:800;color:#fdba74;margin:10px 0}.coordinates{font-family:ui-monospace,monospace;font-size:12px;background:#0e071e;padding:15px;border-radius:10px;color:#ddd6fe;white-space:pre-wrap;min-height:150px;overflow:auto}.button{appearance:none;border:0;border-radius:10px;padding:13px 18px;background:#fb923c;color:#210f3e;font-size:15px;font-weight:800;cursor:pointer}.button:hover{background:#fdba74}.muted{color:#c4b5fd;font-size:14px;line-height:1.5}@media(max-width:800px){body{padding:18px}.heading,.grid{display:block}.heading p{margin-top:16px}.panel{margin-top:18px}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">OPENBYSYRA / JAVASCRIPT</div>
+    <section class="heading"><div><h1>SyraVisage</h1><p>Coordenadas faciais em tempo real, direto pela câmera do navegador.</p></div><a class="muted" href="https://github.com/SyraDevOps">github.com/SyraDevOps</a></section>
+    <section class="grid"><div class="stage"><video id="camera" playsinline></video><canvas id="overlay"></canvas><span class="pill" id="status">Câmera desligada</span></div><aside class="panel"><button class="button" id="toggle">Iniciar câmera</button><div class="muted" style="margin-top:22px">Faces detectadas</div><div class="stat" id="count">0</div><div class="muted">Pontos principais (normalizado e em pixels)</div><pre class="coordinates" id="coordinates">Aguardando câmera…</pre></aside></section>
+  </main>
+  <script src="./SyraVisage.js"></script>
+  <script>
+    const button=document.querySelector('#toggle'), status=document.querySelector('#status'), count=document.querySelector('#count'), output=document.querySelector('#coordinates');
+    const visage=new SyraVisage({video:document.querySelector('#camera'),canvas:document.querySelector('#overlay'),onResults:({faces,faceCount})=>{count.textContent=faceCount;status.textContent=faceCount?'Rastreando em tempo real':'Procurando rosto…';if(faces[0]){const p=faces[0].landmarks;output.textContent=JSON.stringify({noseTip:p.noseTip,leftEye:p.leftEye,rightEye:p.rightEye,mouthLeft:p.mouthLeft,mouthRight:p.mouthRight,boundingBox:faces[0].boundingBox},null,2)}},onError:(error)=>{status.textContent='Erro ao acessar a câmera';output.textContent=error.message}});
+    let active=false;button.onclick=async()=>{if(active){visage.stop();active=false;button.textContent='Iniciar câmera';status.textContent='Câmera desligada';count.textContent='0';return}button.disabled=true;try{await visage.start();active=true;button.textContent='Parar câmera'}catch(error){}finally{button.disabled=false}};
+  </script>
+</body>
+</html>
