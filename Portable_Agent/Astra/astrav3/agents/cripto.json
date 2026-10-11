@@ -1,0 +1,24 @@
+{
+  "name": "crypto",
+  "description": "Consulta o preço atual, variação de 24h, dados de mercado e gera gráficos de tendências de criptomoedas (como Bitcoin, Ethereum, Solana, etc.) usando a API CoinGecko.",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "crypto"
+    },
+    {
+      "id": "consultar_cripto",
+      "type": "python",
+      "script": "buscar_crypto.py",
+      "input": {
+        "contexto": "{{context}}"
+      }
+    },
+    {
+      "id": "ler_relatorio",
+      "type": "read",
+      "path": "crypto/relatorio.txt"
+    }
+  ]
+}

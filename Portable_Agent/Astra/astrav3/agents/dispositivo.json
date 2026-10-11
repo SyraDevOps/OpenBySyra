@@ -1,0 +1,24 @@
+{
+  "name": "dispositivo",
+  "description": "Informa dados completos do sistema local, incluindo nome do computador, sistema operacional, status de conexão com a internet, IP local e público, geolocalização por IP e uso da memória RAM e discos.",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "dispositivo"
+    },
+    {
+      "id": "coletar_dados_sistema",
+      "type": "python",
+      "script": "buscar_dispositivo.py",
+      "input": {
+        "contexto": "{{context}}"
+      }
+    },
+    {
+      "id": "ler_relatorio",
+      "type": "read",
+      "path": "dispositivo/relatorio.txt"
+    }
+  ]
+}

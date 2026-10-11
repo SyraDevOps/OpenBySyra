@@ -1,0 +1,24 @@
+{
+  "name": "imagens",
+  "description": "Busca imagens na internet sobre qualquer assunto, exibe links e abre a primeira imagem encontrada diretamente no navegador.",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "imagens"
+    },
+    {
+      "id": "pesquisar_imagem",
+      "type": "python",
+      "script": "buscar_imagem.py",
+      "input": {
+        "contexto": "{{context}}"
+      }
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "imagens/resultado.txt"
+    }
+  ]
+}

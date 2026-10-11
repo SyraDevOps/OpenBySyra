@@ -1,0 +1,24 @@
+{
+  "name": "clima",
+  "description": "Consulta a previsão do tempo detalhada em tempo real e para os próximos dias em qualquer cidade do Brasil ou do mundo.",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "clima"
+    },
+    {
+      "id": "consultar_meteorologia",
+      "type": "python",
+      "script": "buscar_clima.py",
+      "input": {
+        "contexto": "{{context}}"
+      }
+    },
+    {
+      "id": "ler_previsao",
+      "type": "read",
+      "path": "clima/previsao.txt"
+    }
+  ]
+}

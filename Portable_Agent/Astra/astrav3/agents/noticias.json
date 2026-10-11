@@ -1,0 +1,24 @@
+{
+  "name": "noticias",
+  "description": "Busca as notícias mais recentes sobre tecnologia, inteligência artificial ou assuntos gerais na internet, exibindo manchetes, fontes e links diretos.",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "noticias"
+    },
+    {
+      "id": "coletar_noticias",
+      "type": "python",
+      "script": "buscar_noticias.py",
+      "input": {
+        "contexto": "{{context}}"
+      }
+    },
+    {
+      "id": "ler_relatorio",
+      "type": "read",
+      "path": "noticias/relatorio.txt"
+    }
+  ]
+}

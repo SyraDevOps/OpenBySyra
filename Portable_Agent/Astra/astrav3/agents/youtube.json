@@ -1,0 +1,24 @@
+{
+  "name": "youtube",
+  "description": "Pesquisa vídeos no YouTube sobre qualquer assunto ou artista, extrai o link direto e abre o resultado no navegador ou retorna a URL.",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "youtube"
+    },
+    {
+      "id": "processar_youtube",
+      "type": "python",
+      "script": "abrir_youtube.py",
+      "input": {
+        "contexto": "{{context}}"
+      }
+    },
+    {
+      "id": "ler_status",
+      "type": "read",
+      "path": "youtube/resultado.txt"
+    }
+  ]
+}
