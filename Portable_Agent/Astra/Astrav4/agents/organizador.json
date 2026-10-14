@@ -1,0 +1,26 @@
+{
+  "name": "organizador",
+  "description": "Organiza arquivos soltos de uma pasta em subpastas (por tipo ou por data) com SEGURANÇA: mostra o plano primeiro, só move depois de confirmar e permite desfazer. Use para: “organize meus downloads”, “organize a área de trabalho por data”, “confirmar organização”, “desfazer organização”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "organizador"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "organizador.py",
+      "input": {
+        "contexto": "{{context}}"
+      },
+      "timeout": 30
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "organizador/relatorio.txt"
+    }
+  ]
+}

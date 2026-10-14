@@ -1,0 +1,27 @@
+{
+  "name": "cripto",
+  "description": "Preço, variação 24h/7d, valor de mercado e gráfico de tendência de criptomoedas (CoinGecko), em reais e dólares. Use para: “preço do bitcoin”, “ethereum e solana”, “top 10 criptomoedas”, “gráfico do bitcoin 30 dias”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "crypto"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "cripto.py",
+      "input": {
+        "contexto": "{{context}}"
+      },
+      "network": true,
+      "timeout": 40
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "crypto/relatorio.txt"
+    }
+  ]
+}

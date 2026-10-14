@@ -1,0 +1,26 @@
+{
+  "name": "calendario",
+  "description": "Agenda pessoal em arquivo iCal (.ics): marca, lista, remarca, apaga e busca compromissos em português natural, com recorrência, duração, conflitos e feriados. Use para: “marque dentista amanhã às 15h”, “academia toda segunda às 7h”, “o que tenho essa semana”, “qual meu próximo compromisso”, “quando é a prova?”, “remarque a reunião para sexta às 10h”, “cancele o dentista”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "agenda"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "gerenciar_calendario.py",
+      "input": {
+        "contexto": "{{context}}"
+      },
+      "timeout": 30
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "agenda/relatorio.txt"
+    }
+  ]
+}

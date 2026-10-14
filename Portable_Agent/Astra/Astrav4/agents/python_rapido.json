@@ -1,0 +1,10 @@
+{
+  "name": "python_rapido",
+  "description": "Faz QUALQUER tarefa curta escrevendo e executando Python na hora (cálculos, contas com datas, contar/analisar texto, ler CSV/JSON da pasta de trabalho, gerar números). O código aparece no chat. Use para: “calcule…”, “quantos dias até…”, “rode um python que…”, “analise esse csv”.",
+  "modo": "codigo",
+  "instrucoes": "Escreva um script Python que cumpra EXATAMENTE o pedido em CONTEXTO (cálculo, análise de texto/arquivo da pasta atual, datas, estatística...). Imprima só o resultado final, claro e em português.",
+  "saida": "auto",
+  "rede": false,
+  "timeout": 30,
+  "tentativas": 3
+}

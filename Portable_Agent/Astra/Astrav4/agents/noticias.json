@@ -1,0 +1,27 @@
+{
+  "name": "noticias",
+  "description": "Manchetes atuais de g1, CNN Brasil, Folha, UOL, BBC e Tecnoblog, por categoria, fonte ou assunto (Google Notícias). Use para: “notícias de hoje”, “notícias de tecnologia”, “manchetes do g1”, “notícias sobre o dólar”, “as 5 principais notícias de economia”, “notícias de IA”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "noticias"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "noticias.py",
+      "input": {
+        "contexto": "{{context}}"
+      },
+      "network": true,
+      "timeout": 50
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "noticias/relatorio.txt"
+    }
+  ]
+}

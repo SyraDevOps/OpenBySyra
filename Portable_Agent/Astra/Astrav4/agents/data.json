@@ -1,0 +1,26 @@
+{
+  "name": "data",
+  "description": "Data, hora e contas com datas: dia da semana, horas em outras cidades, quantos dias faltam para o Natal/uma data, feriados, idade, semana do ano. Use para: “que dia é hoje”, “que horas são em Tóquio”, “quantos dias faltam para o Natal”, “próximo feriado”, “que dia da semana foi 7/9/1822”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "data"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "data.py",
+      "input": {
+        "contexto": "{{context}}"
+      },
+      "timeout": 30
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "data/resultado.txt"
+    }
+  ]
+}

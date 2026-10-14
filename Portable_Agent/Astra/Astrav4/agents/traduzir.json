@@ -1,0 +1,10 @@
+{
+  "description": "Traduz textos entre idiomas. Use para: “traduza ‘bom dia, tudo bem?’ para o inglês”, “como se diz obrigado em japonês”, “traduza para português: …”, “o que significa ‘carpe diem’”.",
+  "steps": [
+    {
+      "id": "traduzir",
+      "type": "llm_transform",
+      "prompt": "Pedido do usuario: \"{{context}}\".\nIdentifique o texto a traduzir e o idioma de destino (se nao for dito: de outro idioma para portugues do Brasil; de portugues para ingles). Responda SOMENTE com: a traducao em uma linha; se o destino usar alfabeto nao latino, a pronuncia entre parenteses; e, se houver ambiguidade ou nuance importante, uma observacao curta. Nao invente significados; sem markdown."
+    }
+  ]
+}

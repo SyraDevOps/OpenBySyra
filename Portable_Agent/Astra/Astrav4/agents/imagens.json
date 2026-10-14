@@ -1,0 +1,27 @@
+{
+  "name": "imagens",
+  "description": "Busca imagens na web (DuckDuckGo/Wikimedia), lista os links, abre a primeira ou baixa. Use para: “imagens de jaguatirica”, “mostre fotos do Pão de Açúcar”, “baixe uma imagem de capivara”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "imagens"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "imagens.py",
+      "input": {
+        "contexto": "{{context}}"
+      },
+      "network": true,
+      "timeout": 45
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "imagens/resultado.txt"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# obrigatórios
+colorama
+tqdm
+prompt_toolkit
+faiss-cpu
+sentence-transformers
+numpy
+# backend Groq (opcional)
+groq
+tiktoken
+# backend offline GGUF (opcional)
+llama-cpp-python
+# voz (opcional)
+sounddevice
+faster-whisper
+piper-tts
+silero-vad-notorch
+rapidfuzz
+# agentes (opcionais): buscar, dispositivo
+ddgs
+psutil
+pypdf

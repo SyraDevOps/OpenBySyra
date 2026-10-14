@@ -1,0 +1,27 @@
+{
+  "name": "dispositivo",
+  "description": "Informações do computador: sistema, CPU, memória, discos, bateria, internet, IP e localização aproximada (só se pedir), processos que mais usam memória. Use para: “info do computador”, “quanto de memória livre”, “espaço nos discos”, “estou com internet?”, “qual meu ip”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "dispositivo"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "dispositivo.py",
+      "input": {
+        "contexto": "{{context}}"
+      },
+      "network": true,
+      "timeout": 30
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "dispositivo/relatorio.txt"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "grafico_carteira",
+  "description": "Gera e abre um gráfico (pizza + barras) da carteira de investimentos a partir de carteira/carteira.csv (ativo,valor). Executa e abre sozinho; a Astra só confirma que foi executado. Use para: “execute o agente grafico_carteira”, “mostre o gráfico da minha carteira”.",
+  "modo": "lancar",
+  "steps": [
+    {"id": "criar_pasta", "type": "mkdir", "path": "carteira"},
+    {"id": "executar", "type": "python", "script": "grafico_carteira.py", "timeout": 3600, "input": {"contexto": "{{context}}"}}
+  ]
+}

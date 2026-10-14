@@ -1,0 +1,26 @@
+{
+  "name": "notas",
+  "description": "Anotações rápidas com busca por semelhança. Use para: “anote que a senha do wifi é azul42”, “guarde: reunião com a Ana quinta”, “o que anotei sobre wifi”, “minhas notas”, “apague a nota 3”, “edite a nota 2: …”.",
+  "resposta": "direta",
+  "steps": [
+    {
+      "id": "criar_pasta",
+      "type": "mkdir",
+      "path": "notas"
+    },
+    {
+      "id": "executar",
+      "type": "python",
+      "script": "notas.py",
+      "timeout": 30,
+      "input": {
+        "contexto": "{{context}}"
+      }
+    },
+    {
+      "id": "ler_resultado",
+      "type": "read",
+      "path": "notas/relatorio.txt"
+    }
+  ]
+}
