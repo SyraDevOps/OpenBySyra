@@ -1,8 +1,0 @@
-{
-  "name": "listar_pasta_py",
-  "description": "Exemplo de agente de código com código FIXO (sem modelo): lista os 10 maiores arquivos da pasta de trabalho. Use para: “maiores arquivos da pasta”.",
-  "modo": "codigo",
-  "codigo": "import os\nitens=[]\nfor raiz,_,arqs in os.walk('.'):\n    for a in arqs:\n        p=os.path.join(raiz,a)\n        try: itens.append((os.path.getsize(p),p))\n        except OSError: pass\nitens.sort(reverse=True)\nfor t,p in itens[:10]: print(f'{t/1024:10.1f} KB  {p}')\nprint(f'{len(itens)} arquivos no total') if itens else print('pasta vazia')",
-  "saida": "mostrar",
-  "timeout": 20
-}
